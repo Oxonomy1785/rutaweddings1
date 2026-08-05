@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/ruta.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="img/ruta.png">
+    <link rel="stylesheet" href="gallerystyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сучасна Галерея</title>
+</head>
+<body>
+
+    <header>
+        <h1>Моя Галерея</h1>
+        <p>Фото та відео моменти</p>
+    </header>
+
+    <div class="gallery-container">
+        <div class="gallery-item" data-type="image" data-src="galery1.jpg">
+            <img src="galery1.jpg" alt="2">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery2.jpg">
+            <img src="galery2.jpg" alt="1">
+        </div>
+
+        <div class="gallery-item" data-type="video" data-src="video1.mp4">
+            <video muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+            <div class="video-indicator">▶ Відео</div>
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery3.jpg">
+            <img src="galery3.jpg" alt="3">
+        </div>
+        
+        <div class="gallery-item" data-type="image" data-src="galery4.jpg">
+            <img src="galery4.jpg" alt="4">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery5.jpg">
+            <img src="galery5.jpg" alt="5">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery6.jpg">
+            <img src="galery6.jpg" alt="6">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery7.jpg">
+            <img src="galery7.jpg" alt="7">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery8.jpg">
+            <img src="galery8.jpg" alt="8">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery9.jpg">
+            <img src="galery9.jpg" alt="9">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery10.jpg">
+            <img src="gallery10.jpg" alt="10">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery11.jpg">
+            <img src="galery11.jpg" alt="11">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery12.jpg">
+            <img src="galery12.jpg" alt="12">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery13.jpg">
+            <img src="galery13.jpg" alt="13">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery14.jpg">
+            <img src="galery14.jpg" alt="14">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery15.jpg">
+            <img src="galery15.jpg" alt="15">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery16.jpg">
+            <img src="galery16.jpg" alt="16">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery17.jpg">
+            <img src="galery17.jpg" alt=17">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery18.jpg">
+            <img src="galery18.jpg" alt="18">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery19.jpg">
+            <img src="galery19.jpg" alt="19">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery20.jpg">
+            <img src="galery20.jpg" alt="20">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery21.jpg">
+            <img src="galery21.jpg" alt="21">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery22.jpg">
+            <img src="galery22.jpg" alt="22">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery23.jpg">
+            <img src="galery23.jpg" alt="23">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery24.jpg">
+            <img src="galery24.jpg" alt="24">
+        </div>
+
+        <div class="gallery-item" data-type="image" data-src="galery25.jpg">
+            <img src="galery25.jpg" alt="25">
+        </div>
+    </div>
+
+<a href="index.html" target="_blank" class="social-btn instagram">
+        <span>головна</span>
+    </a>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" id="closeLightbox">&times;</span>
+        <div id="lightbox-media-container">
+            </div>
+    </div>
+
+    <script>
+        /* --- 4. Логіка JavaScript --- */
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const closeBtn = document.getElementById('closeLightbox');
+        const mediaContainer = document.getElementById('lightbox-media-container');
+
+        // Відкриття Lightbox
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const type = item.getAttribute('data-type');
+                const src = item.getAttribute('data-src');
+                
+                mediaContainer.innerHTML = ''; // Очистити попередній контент
+
+                if (type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.className = 'lightbox-content';
+                    mediaContainer.appendChild(img);
+                } else if (type === 'video') {
+                    const video = document.createElement('video');
+                    video.src = src;
+                    video.className = 'lightbox-content';
+                    video.controls = true; // Показати кнопки play/pause
+                    video.autoplay = true;
+                    mediaContainer.appendChild(video);
+                }
+
+                lightbox.classList.add('active');
+            });
+        });
+
+        // Закриття Lightbox
+        const closeGallery = () => {
+            lightbox.classList.remove('active');
+            mediaContainer.innerHTML = ''; // Очистити пам'ять (зупинити відео)
+        };
+
+        closeBtn.addEventListener('click', closeGallery);
+
+        // Закриття при кліку поза межами фото
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeGallery();
+            }
+        });
+        
+        // Закриття клавішею Esc
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeGallery();
+        });
+    </script>
+</body>
+</html>

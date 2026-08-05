@@ -1,0 +1,124 @@
+
+        /* --- 1. Основні стилі (CSS) --- */
+        :root {
+            background-image: linear-gradient(90deg, rgb(239, 230, 218) 0%, rgb(229, 215, 202) 16.667%, rgb(218, 199, 185) 33.333%, rgb(207, 182, 169) 50%, rgb(196, 166, 153) 66.667%, rgb(185, 150, 139) 83.333%, rgb(175, 136, 126) 100%);
+            --text-color: #ffffff;
+            --accent-color: #ff4081;
+            --overlay-color: rgba(0, 0, 0, 0.9);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        h1 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- 2. Сітка Галереї --- */
+        .gallery-container {
+            display: grid;
+            /* Адаптивність: стовпці автоматично підлаштовуються */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            aspect-ratio: 1 / 1; /* Робить всі блоки квадратними */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item img, 
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Заповнює блок без спотворення */
+            transition: var(--transition);
+        }
+
+        /* Ефект при наведенні */
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.1);
+            filter: brightness(0.8);
+        }
+
+        /* Значок відео */
+        .video-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            pointer-events: none;
+        }
+
+        /* --- 3. Модальне вікно (Lightbox) --- */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--overlay-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border-radius: 4px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            color: var(--accent-color);
+        }
