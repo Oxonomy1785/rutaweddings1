@@ -1,21 +1,20 @@
 backend:
-  name: git-gateway
-  branch: main # или master
+  name: gitlab
+  repo: svinasvina248/rutaweddings1 # Путь к репозиторию на GitLab
+  auth_type: implicit
+  app_id: 19f7ea4b96cdfe859b7f8718026b32ea758825b0d600721099d29da75d3bdd6e # Application ID из предыдущего шага
+  branch: main # Или master
 
-# Куда сохранять загруженные клиентом картинки
 media_folder: "img"
 public_folder: "/img"
 
-# Описание разделов (коллекций) для редактирования
 collections:
   - name: "pages"
     label: "Страницы"
     files:
-      - file: "index.html" # или data/home.json
+      - file: "index.html"
         label: "Главная страница"
         name: "home"
         fields:
           - { label: "Заголовок H1", name: "title", widget: "string" }
-          - { label: "Подзаголовок", name: "subtitle", widget: "string" }
-          - { label: "Текст о нас", name: "about_text", widget: "markdown" }
-          - { label: "Главный баннер", name: "hero_image", widget: "image" }
+          - { label: "Описание", name: "description", widget: "markdown" }
