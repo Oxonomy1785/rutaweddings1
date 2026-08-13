@@ -1,36 +1,3 @@
----
-title: "RUTAWEDDINGS | організація свят"
-meta_description: "RUTAWEDDINGS - організація весіль та приватних подій під ключ. Елегантні та персоналізовані заходи в Італії."
-
-hero_title: "RUTA"
-hero_tagline1: "FLOWERS.WEDDINGS.DECOR"
-hero_tagline2: "MARIANA PAVLIUK"
-hero_button: "Замовити свято"
-
-about_pretitle: "Відкриваючи світ"
-about_title_main: "Ваша історія"
-about_title_sub: "в серці"
-about_title_gold: "Італії"
-about_lead: "Ми не просто організовуємо весілля за кордоном. Ми створюємо персоналізований досвід «Dolce Vita»."
-about_text: "На озері Комо — Weddingway Ruta стає вашим провідником у світ вишуканої італійської естетики, де кожна деталь пронизана сонцем та любов'ю."
-about_button: "Розпочати подорож"
-
-services_title: "Послуги"
-service1_title: "Весілля під ключ"
-service1_desc: "Від першої зустрічі до координації весільного дня."
-service2_title: "Приватні події"
-service2_desc: "Дні народження, ювілеї та вечірки преміум-класу."
-service3_title: "Концептуальний декор"
-service3_desc: "Стилістика, флористика та візуальне наповнення."
-
-floristry_brand: "Mariana Pavliuk"
-floristry_title: "Мистецтво Весільної Флористики"
-floristry_subtitle: "Професійне оформлення та організація вашого особливого дня"
-
-contact_title: "Ваше ідеальне свято починається тут"
-contact_email: "ruta.weddings@gmail.com"
-footer_copyright: "© 2026 WEDDINGWAY RUTA"
----
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -570,6 +537,17 @@ footer_copyright: "© 2026 WEDDINGWAY RUTA"
         window.addEventListener("focus", () => {
             document.title = docTitle;
         });
+
+        // Автоматическая подгрузка текстов из Pages CMS
+  fetch('content.json')
+    .then(response => response.json())
+    .then(data => {
+      if (data.hero_title) document.getElementById('heroTitle').innerText = data.hero_title;
+      if (data.hero_tagline1) document.getElementById('heroTagline').innerText = data.hero_tagline1;
+      if (data.hero_tagline2) document.getElementById('heroTaglineSub').innerText = data.hero_tagline2;
+      if (data.hero_button) document.getElementById('heroBtn').innerText = data.hero_button;
+    })
+    .catch(err => console.log('Используются стандартные тексты из HTML'));
     </script>
 </body>
 </html>
