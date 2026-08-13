@@ -1,6 +1,6 @@
 const maxImg = document.querySelector(".right-panel img");
 const select = document.querySelector("select");
-const alllang = [ua, it];
+//const alllang = [ua, it];
 
 select.addEventListener('change', changeURLLanguage);
 // перенаправить на url с указанием языка
