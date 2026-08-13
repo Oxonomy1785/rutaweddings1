@@ -6,14 +6,8 @@ content:
   - name: main_page
     label: "Головна сторінка"
     type: file
-    path: index.html
+    path: content.json
     fields:
-      - name: title
-        label: "Заголовок вкладки (SEO Title)"
-        type: string
-      - name: meta_description
-        label: "Опис сайту (SEO Description)"
-        type: string
       - name: hero_title
         label: "Головний заголовок (RUTA)"
         type: string
@@ -37,12 +31,6 @@ content:
         type: string
       - name: about_text
         label: "Основний текст про Озеро Комо"
-        type: string
-      - name: services_title
-        label: "Заголовок секции услуг"
-        type: string
-      - name: contact_title
-        label: "Заголовок контактов"
         type: string
       - name: contact_email
         label: "Email"
