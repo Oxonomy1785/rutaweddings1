@@ -18,20 +18,29 @@ content:
         label: "Підзаголовок 2 (MARIANA PAVLIUK)"
         type: string
       - name: hero_button
-        label: "Текст кнопки (Замовити свято)"
+        label: "Текст кнопки замовлення"
         type: string
       - name: about_pretitle
-        label: "Малий заголовок (Відкриваючи світ)"
+        label: "Малий заголовок Про нас"
         type: string
       - name: about_title_main
         label: "Заголовок Про нас (Ваша історія)"
+        type: string
+      - name: about_title_sub
+        label: "Підзаголовок Про нас (в серці)"
+        type: string
+      - name: about_title_gold
+        label: "Золотий текст (Італії)"
         type: string
       - name: about_lead
         label: "Перший абзац (Dolce Vita)"
         type: string
       - name: about_text
-        label: "Основний текст про Озеро Комо"
+        label: "Основний текст про Комо"
+        type: string
+      - name: about_button
+        label: "Текст кнопки в Про нас"
         type: string
       - name: contact_email
-        label: "Email"
+        label: "Email для зв'язку"
         type: string
