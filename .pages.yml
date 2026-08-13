@@ -1,99 +1,48 @@
-# 1. Налаштування папки з медіафайлами (зображення, відео)
 media:
   input: img
   output: /img
 
-# 2. Налаштування блоків для редагування
 content:
   - name: main_page
-    label: "Головна сторінка (Ruta Weddings)"
-    type: file
-    file: index.html
+    label: "Головна сторінка"
+    path: index.html
     fields:
-      # --- HERO (ПЕРШИЙ ЕКРАН) ---
-      - name: hero
-        label: "Перший екран (Hero)"
-        type: object
-        fields:
-          - { name: title, label: "Головний заголовок (RUTA)", type: string }
-          - { name: tagline1, label: "Підзаголовок 1 (FLOWERS.WEDDINGS.DECOR)", type: string }
-          - { name: tagline2, label: "Підзаголовок 2 (MARIANA PAVLIUK)", type: string }
-          - { name: btn_text, label: "Текст кнопки замовлення", type: string }
-
-      # --- СЕКЦІЯ "ПРО НАС" (ІТАЛІЯ) ---
-      - name: about
-        label: "Секція 'Про нас' (Італія)"
-        type: object
-        fields:
-          - { name: pre_title, label: "Малий заголовок (Відкриваючи світ)", type: string }
-          - { name: title, label: "Заголовок (Ваша історія...)", type: string }
-          - { name: lead_paragraph, label: "Перший абзац (Dolce Vita)", type: text }
-          - { name: description, label: "Основний текст про Озеро Комо", type: text }
-          - { name: image, label: "Головне фото секції", type: image }
-
-      # --- СЕКЦІЯ ПОСЛУГ ---
-      - name: services
-        label: "Блок Послуги"
-        type: object
-        fields:
-          - { name: section_title, label: "Заголовок секції", type: string }
-          - name: items
-            label: "Перелік послуг"
-            type: list
-            fields:
-              - { name: title, label: "Назва послуги", type: string }
-              - { name: description, label: "Опис послуги", type: text }
-
-      # --- ВЕСІЛЬНА ФЛОРИСТИКА ---
-      - name: floristry
-        label: "Блок 'Мистецтво Весільної Флористики'"
-        type: object
-        fields:
-          - { name: brand, label: "Ім'я / Бренд (Mariana Pavliuk)", type: string }
-          - { name: title, label: "Заголовок", type: string }
-          - { name: subtitle, label: "Підзаголовок", type: string }
-
-      # --- ОФОРМЛЕННЯ ЦЕРЕМОНІЇ ТА ВЕЧЕРІ ---
-      - name: ceremony
-        label: "Секція 'Оформлення Церемонії'"
-        type: object
-        fields:
-          - { name: title, label: "Заголовок", type: string }
-          - { name: description, label: "Опис", type: text }
-          - { name: image, label: "Фотографія церемонії", type: image }
-
-      - name: dinner
-        label: "Секція 'Весільна Вечеря'"
-        type: object
-        fields:
-          - { name: title, label: "Заголовок", type: string }
-          - { name: text1, label: "Перший абзац", type: text }
-          - { name: text2, label: "Другий абзац", type: text }
-          - { name: image, label: "Фотографія вечері", type: image }
-
-      # --- ПАКЕТНІ ПРОПОЗИЦІЇ (ЦІНИ) ---
-      - name: pricing
-        label: "Пакетні Пропозиції (Ціни)"
-        type: list
-        fields:
-          - { name: name, label: "Назва пакета (напр. Делікатний)", type: string }
-          - { name: price, label: "Вартість (напр. €5,000 – €8,000)", type: string }
-          - { name: description, label: "Опис пакета", type: text }
-
-      # --- ВІДЕО ТА ДЕCТИЦІЯ ---
-      - name: cinema
-        label: "Блок з відео (Жива естетика)"
-        type: object
-        fields:
-          - { name: badge, label: "Мiтка (напр. Villa Pessina)", type: string }
-          - { name: title, label: "Заголовок", type: string }
-          - { name: description, label: "Опис", type: text }
-
-      # --- КОНТАКТИ ТА СОЦМЕРЕЖІ ---
-      - name: contacts
-        label: "Контактні дані"
-        type: object
-        fields:
-          - { name: email, label: "Email адреса", type: string }
-          - { name: instagram_url, label: "Посилання на Instagram", type: string }
-          - { name: facebook_url, label: "Посилання на Facebook", type: string }
+      - name: title
+        label: "Заголовок вкладки (SEO Title)"
+        type: string
+      - name: meta_description
+        label: "Опис сайту (SEO Description)"
+        type: string
+      - name: hero_title
+        label: "Головний заголовок (RUTA)"
+        type: string
+      - name: hero_tagline1
+        label: "Підзаголовок 1 (FLOWERS.WEDDINGS.DECOR)"
+        type: string
+      - name: hero_tagline2
+        label: "Підзаголовок 2 (MARIANA PAVLIUK)"
+        type: string
+      - name: hero_button
+        label: "Текст кнопки (Замовити свято)"
+        type: string
+      - name: about_pretitle
+        label: "Малий заголовок (Відкриваючи світ)"
+        type: string
+      - name: about_title_main
+        label: "Заголовок Про нас (Ваша історія)"
+        type: string
+      - name: about_lead
+        label: "Перший абзац (Dolce Vita)"
+        type: text
+      - name: about_text
+        label: "Основний текст про Озеро Комо"
+        type: text
+      - name: services_title
+        label: "Заголовок секции услуг"
+        type: string
+      - name: contact_title
+        label: "Заголовок контактов"
+        type: string
+      - name: contact_email
+        label: "Email"
+        type: string
