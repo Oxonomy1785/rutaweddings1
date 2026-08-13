@@ -5,6 +5,7 @@ media:
 content:
   - name: main_page
     label: "Головна сторінка"
+    type: file
     path: index.html
     fields:
       - name: title
@@ -33,10 +34,10 @@ content:
         type: string
       - name: about_lead
         label: "Перший абзац (Dolce Vita)"
-        type: text
+        type: string
       - name: about_text
         label: "Основний текст про Озеро Комо"
-        type: text
+        type: string
       - name: services_title
         label: "Заголовок секции услуг"
         type: string
